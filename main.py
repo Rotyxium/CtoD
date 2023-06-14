@@ -43,5 +43,7 @@ async def new(ctx):
             with tempfile.NamedTemporaryFile(suffix='.png', delete=False) as temp_file:
                 image.save(temp_file.name)
                 await ctx.send(f"Generated new image!\nCurrent seed: {seed}", file=discord.File(temp_file.name))
+                
+            os.remove(temp_file.name)
 
 client.run(TOKEN)
