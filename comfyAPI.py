@@ -105,7 +105,7 @@ prompt_text = """
                 "4",
                 1
             ],
-            "text": "masterpiece best quality girl"
+            "text": "masterpiece, best quality, 1girl"
         }
     },
     "7": {
@@ -115,7 +115,7 @@ prompt_text = """
                 "4",
                 1
             ],
-            "text": "bad hands"
+            "text": "bad hands, bad quality, worse quality"
         }
     },
     "8": {
@@ -146,7 +146,3 @@ prompt_text = """
 
 
 prompt = json.loads(prompt_text)
-#set the text prompt for our positive CLIPTextEncode
-prompt["3"]["inputs"]["sampler_name"] = "dpmpp_2m"
-prompt["3"]["inputs"]["scheduler"] = "karras"
-prompt["4"]["inputs"]["ckpt_name"] = "abyssorangemix2_Hard.safetensors"
